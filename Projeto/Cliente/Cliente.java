@@ -2,8 +2,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+	A classe Cliente representa uma classe executavel responsavel pela comunicacao direta com o usuario.
+	Nela encontramos uma main.
+	@author Nicolas Maisonnette Duarte, Eduardo Migueis, Gabriel Scalese e Enzo Spinella.
+	@since 2019.
+*/
 public class Cliente
 {
+	/**
+		Roda a aplicacao.
+		Realiza todas as interacoes necessarias com o usuario, sendo, portanto, o jogo em si.
+		@param args parametro adicional passado pelo usuario.
+	*/
 	public static void main (String[] args)
 	{
 		String nome = "";

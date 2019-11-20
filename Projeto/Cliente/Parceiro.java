@@ -3,16 +3,31 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+	A classe Parceiro representa uma classe responsavel pelo envio de informacoes ao cliente ou ao servidor.
+	Nela encontramos metodos que nos auxiliam nessa comunicacao.
+	@author Nicolas Maisonnette Duarte, Eduardo Migueis, Gabriel Scalese e Enzo Spinella.
+	@since 2019.
+*/
 public class Parceiro
 {
     private Socket             conexao;
     private ObjectInputStream  receptor;
     private ObjectOutputStream transmissor;
     private String palavraEscolhida;
-    private JogadaDePalavra jogada;
     private String nome;
     private String ultimoJogador;
 
+	/**
+		Constroi uma nova instancia da classe Parceiro.
+		Para tanto, deve ser fornecido um Socket, que sera utilizado como conexao,
+		um ObjectInputStream, que sera utilizado como um receptor e
+		um ObjectOutputStream, que sera utilizado como um transmissor da instancia recem criada.
+		@param conexao o Socket a ser utilizado como conexao.
+		@param receptor o ObjectInputStream a ser utilizado como receptor.
+		@param transmissor o ObjectOutputStream a ser utilizado como transmissor.
+		@throws Exception se os parametros forem invalidos.
+    */
     public Parceiro (Socket conexao, ObjectInputStream  receptor, ObjectOutputStream transmissor) throws Exception
     {
         if (conexao==null)
@@ -29,6 +44,12 @@ public class Parceiro
         this.transmissor = transmissor;
     }
 
+	/**
+		Envia um comunicado para o servidor.
+		Para tanto, deve ser forncedio um comunicado, que sera enviado ao servidor por meio de um transmissor.
+		@param x o Comunicado a ser transmitido.
+		@throws Exception se ocorrer algum erro na transmissao.
+    */
     public void receba (Comunicado x) throws Exception
     {
         try
@@ -42,6 +63,11 @@ public class Parceiro
         }
     }
 
+	/**
+		Recebe um comunicado do servidor.
+		@return o comunicado recebido do servidor.
+		@throws Exception se ocorrer algum erro na recepcao.
+    */
     public Comunicado envie () throws Exception
     {
         try
@@ -67,24 +93,11 @@ public class Parceiro
 		this.palavraEscolhida = palavra;
 	}
 
-	public void setJogadaDePalavra(JogadaDePalavra jogada) throws Exception
-	{
-		if(jogada == null)
-			throw new Exception("Jogada de palavra invalida");
-
-		this.jogada = jogada;
-	}
-
 	public void setNome(String nome) throws Exception
 	{
 		if(nome == null)
 			throw new Exception("Nome invalido!");
 		this.nome = nome;
-	}
-
-	public JogadaDePalavra getJogadaDePalavra()
-	{
-		return this.jogada;
 	}
 
 	public String getPalavraEscolhida()
