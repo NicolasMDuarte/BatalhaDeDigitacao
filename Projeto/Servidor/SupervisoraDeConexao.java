@@ -75,7 +75,7 @@ public class SupervisoraDeConexao extends Thread
                 if(this.qtdJogadores == 4)
                 	for(Parceiro jogador: this.jogadores)
                 	{
-						jogador.receba(new ComunicadoComecar(true));
+						jogador.receba(new ComunicadoComecar());
 					}
             }
 

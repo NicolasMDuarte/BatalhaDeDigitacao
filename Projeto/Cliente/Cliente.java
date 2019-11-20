@@ -149,7 +149,7 @@ public class Cliente
 				Perdedor perdedor = new Perdedor("null");
 				try
 				{
-					servidor.receba (new PedidoDeIgualdade(igual));
+					servidor.receba (new PedidoDeIgualdade());
 
 					perdedor = (Perdedor)servidor.envie();
 
