@@ -2,6 +2,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
+/**
+	A classe AceitadoraDeConexao representa uma classe executavel responsavel pela conexao com servidor e supervisor.
+	@author Nicolas Maisonnette Duarte, Eduardo Migueis, Gabriel Scalese e Enzo Spinella.
+	@since 2019. 
+*/
 public class AceitadoraDeConexao extends Thread
 {
     private static final int PORTA_PADRAO = 3000;
@@ -9,14 +14,20 @@ public class AceitadoraDeConexao extends Thread
     private ServerSocket        pedido;
     private ArrayList<Parceiro> jogadores;
 
+    /**
+    	Constroi uma instancia contendo a porta e lista de todos os usuarios participantes do jogo.
+	@param escolha representa a porta fornecida pelos usuarios.
+	@param jogadores representa uma lista contendo todos os participantes do jogo.
+	@throws Exception se a porta fornecida e invalida ou a lista de jogadores e invalida.
+    */
     public AceitadoraDeConexao(String escolha, ArrayList<Parceiro> jogadores) throws Exception
     {
         int porta = AceitadoraDeConexao.PORTA_PADRAO;
 
         if (escolha != null)
         {
-			porta = Integer.parseInt(escolha);
-		}
+	    porta = Integer.parseInt(escolha);
+	}
 
        	try
         {
@@ -33,6 +44,10 @@ public class AceitadoraDeConexao extends Thread
         this.jogadores = jogadores;
     }
 
+    /**
+    	O metodo run faz a conexao entre a classe SupervisoraDeConexao e classe Servidor.
+	Ha possibilidade de dar erro, porem os erros sao tratados sem lancar excecao.
+    */
     public void run ()
     {
         for(;;)
@@ -40,7 +55,7 @@ public class AceitadoraDeConexao extends Thread
             Socket conexao=null;
             try
             {
-                conexao = this.pedido.accept(); //Realizou a conex„o
+                conexao = this.pedido.accept(); //Realizou a conex√£o
             }
             catch (Exception erro)
             {
