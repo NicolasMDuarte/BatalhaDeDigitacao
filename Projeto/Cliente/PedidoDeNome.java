@@ -66,7 +66,7 @@ public class PedidoDeNome extends Comunicado
 	}
 /**
 	    Gera uma representação textual de todo conteúdo do nome.
-	    Produz e resulta um String com todos o nome.
+	    Produz e resulta um String com o nome.
 	    @return um String contendo o conteúdo do nome.
 	    */
 
@@ -103,6 +103,12 @@ public class PedidoDeNome extends Comunicado
 
 		return false;
 	}
+/**
+	 Calcula o código de espalhamento (ou código de hash) de um PedidoDeNome.
+	 Calcula e resulta o código de espalhamento (ou código de hash, ou ainda o
+	 hashcode) do PedidoDeNome representada pela instância à qual o método for aplicado.
+	 @return o código de espalhamento do PedidoDeNome chamante do método.
+*/
 
 	public int hashCode()
 	{
