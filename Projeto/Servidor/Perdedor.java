@@ -12,6 +12,7 @@ public class Perdedor extends Comunicado
     /**
 	    Constroi uma instancia da classe Perdedor.
 	    @param perdedor determina o perdedor a ser armazenado na classe.
+	    @throws Exception se o parametro for null.
     */
 	public Perdedor(String perdedor) throws Exception
 	{
