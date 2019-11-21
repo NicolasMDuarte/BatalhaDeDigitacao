@@ -1,8 +1,19 @@
 import java.net.InetAddress;
 import java.util.ArrayList;
 
+/**
+	A classe Servidor representa uma classe executavel responsavel pela comunicacao mutua entre os usuarios.
+	Nela encontramos uma main.
+	@author Nicolas Maisonnette Duarte, Eduardo Migueis, Gabriel Scalese e Enzo Spinella.
+	@since 2019.
+*/
 public class Servidor
 {
+	/**
+		Roda a aplicacao.
+		Realiza todas as funcoes requisitadas pelo usuario, estabelecendo uma conexao.
+		@param args parametro adicional passado pelo usuario.
+	*/
 	public static void main(String[] args)
 	{
 		System.out.print("Indique a porta desejada: ");
