@@ -2,17 +2,17 @@
 	A classe Perdedor representa um perdedor,
 	tendo como base uma String que respresenta o nome do mesmo.
 	Instâncias desta classe permitem armazenar determinado perdedor.
-	@author Eduardo Migueis, Enzo Spinella, Gabriel Scalese e Nícolas Duarte
-	@since 2019
+	@author Eduardo Migueis, Enzo Spinella, Gabriel Scalese e Nicolas Duarte.
+	@since 2019.
 */
 public class Perdedor extends Comunicado
 {
 	private String perdedor;
 
-/**
-	Constroi uma instância da classe Perdedor.
-	@param nome determina o perdedor a ser armazenado na classe.
-*/
+        /**
+	    Constroi uma instancia da classe Perdedor.
+	    @param perdedor determina o perdedor a ser armazenado na classe.
+        */
 	public Perdedor(String perdedor) throws Exception
 	{
 		if(perdedor == null)
@@ -22,11 +22,11 @@ public class Perdedor extends Comunicado
 	}
 	
 	/**
-	    Constroi uma cópia da instância da classe Perdedor.
+	    Constroi uma copia da instancia da classe Perdedor.
 	    Para tanto, deve ser fornecida uma instancia da classe
 	    Perdedor para ser utilizada como modelo para a
-	    construção da nova instância.
-	    @param perd a instância da classe Perdedor a ser usada
+	    construcao da nova instancia.
+	    @param perd a instancia da classe Perdedor a ser usada
             como modelo.
 	    @throws Exception se o modelo for null.
 */
@@ -47,10 +47,10 @@ public class Perdedor extends Comunicado
 	}
 /**
 	    Clona um Perdedor.
-	    Produz e resulta uma cópia do Perdedor representado pela instância
-	    à qual o método for aplicado.
-	    @return a cópia do Perdedor representada pela instância à qual
-	    o método for aplicado.
+	    Produz e resulta uma copia do Perdedor representado pela instancia
+	    a qual o metodo for aplicado.
+	    @return a copia do Perdedor representado pela instancia a qual
+	    o metodo for aplicado.
 */
 	public Object clone()
 	{
@@ -68,7 +68,7 @@ public class Perdedor extends Comunicado
 /**
 	    Gera uma representação textual do perdedor.
 	    Produz e resulta um String com o perdedor.
-	    @return um String contendo o conteúdo do perdedor.
+	    @return um String contendo o conteudo do perdedor.
 	    */
 	public String toString()
 	{
@@ -76,15 +76,15 @@ public class Perdedor extends Comunicado
 	}
 /**
 	    Verifica a igualdade entre dois Perdedores.
-	    Verifica se o Object fornecido como parâmetro representa um
-	    Perdedor igual àquela representada pela instância à qual este
-	    método for aplicado, resultando true em caso afirmativo,
-	    ou false, caso contrário.
-	    @param  obj o objeto a ser comparado com a instância à qual esse método
+	    Verifica se o Object fornecido como parametro representa um
+	    Perdedor igual aquele representado pela instancia ao qual este
+	    metodo for aplicado, resultando true em caso afirmativo,
+	    ou false, caso contrario.
+	    @param  obj o objeto a ser comparado com a instancia a qual esse metodo
 	            for aplicado.
-	    @return true, caso o Object fornecido ao método e a instância chamante do
-	            método representarem agendas iguais, ou false, caso contrário.
-	    */
+	    @return true, caso o Object fornecido ao metodo e a instancia chamante do
+	            metodo representarem perdedores iguais, ou false, caso contrario.
+*/
 	public boolean equals(Object obj)
 	{
 		if(obj == null)
@@ -103,10 +103,10 @@ public class Perdedor extends Comunicado
 		return false;
 	}
 /**
-	 Calcula o código de espalhamento (ou código de hash) de um Perdedor.
-	 Calcula e resulta o código de espalhamento (ou código de hash, ou ainda o
-	 hashcode) do Perdedor representada pela instância à qual o método for aplicado.
-	 @return o código de espalhamento do Perdedor chamante do método.
+	 Calcula o codigo de espalhamento (ou codigo de hash) de um Perdedor.
+	 Calcula e resulta o codigo de espalhamento (ou codigo de hash, ou ainda o
+	 hashcode) do Perdedor representado pela instancia ao qual o metodo for aplicado.
+	 @return o codigo de espalhamento do Perdedor chamante do metodo.
 */
 	public int hashCode()
 	{
