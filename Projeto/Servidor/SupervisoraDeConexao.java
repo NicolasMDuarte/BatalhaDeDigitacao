@@ -2,6 +2,11 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
+/**
+	A classe SupervisoraDeConexao executa acoes do Servidor.
+	@author Nicolas Maisonnette Duarte, Eduardo Migueis, Gabriel Scalese e Enzo Spinella.
+	@since 2019. 
+*/
 public class SupervisoraDeConexao extends Thread
 {
     private Parceiro            jogador;
@@ -11,6 +16,12 @@ public class SupervisoraDeConexao extends Thread
     private static int qtdJogadoresProntos = 0;
     private static boolean jaPediuPalavra = false;
 
+    /**
+    	Constroi uma instancia contendo a conexao do servidor e uma lista de jogadores.
+	@param conexao representa a conexao com o Servidor.
+	@param jogadores representa uma lista de jogadores.
+	@throws Exception se a conexao fornecida for invalida ou a lista de jogadores fornecida for invalida.
+    */
     public SupervisoraDeConexao(Socket conexao, ArrayList<Parceiro> jogadores) throws Exception
     {
         if (conexao==null)
@@ -23,6 +34,10 @@ public class SupervisoraDeConexao extends Thread
         this.jogadores = jogadores;
     }
 
+    /**
+    O metodo run executa todas as acoes do Servidor.
+    Ha possibilidade de erro, porem os erros sao tratados sem lancar excecao.
+    */
     public void run()
     {
         ObjectInputStream receptor=null;
