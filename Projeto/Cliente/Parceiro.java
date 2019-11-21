@@ -80,11 +80,26 @@ public class Parceiro
         }
     }
 
+	/**
+		Altera o nome do ultimo jogador.
+		Recebe um nome e o utiliza para alterar o nome da classe.
+		@param nome o nome a ser incluido.
+		@throws Exception se o nome for invalido.
+	*/
     public void setUltimoJogador(String nome) throws Exception
     {
+		if(nome == null)
+			throw new Exception("Parametro invalido");
+
 		this.ultimoJogador = nome;
 	}
 
+	/**
+		Altera a palavra escolhida.
+		Recebe uma palavra e a utilza para substituir a palavra da classe.
+		@param palavra a palavra a ser incluida.
+		@throws Exception se a palavra for invalida.
+	*/
 	public void setPalavraEscolhida(String palavra) throws Exception
 	{
 		if(palavra == null)
@@ -93,29 +108,53 @@ public class Parceiro
 		this.palavraEscolhida = palavra;
 	}
 
+	/**
+		Altera o nome do jogador.
+		Recebe um nome e o utiliza para alterar o nome da classe.
+		@param nome o nome a ser incluido.
+		@throws Exception se o nome for invalido.
+	*/
 	public void setNome(String nome) throws Exception
 	{
 		if(nome == null)
 			throw new Exception("Nome invalido!");
+
 		this.nome = nome;
 	}
 
+	/**
+		Retorna a palavra escolhida armazenada.
+		@return retorna a palavra relativa ao atributo desta classe.
+	*/
 	public String getPalavraEscolhida()
 	{
 		return this.palavraEscolhida;
 	}
 
+	/**
+		Retorna o nome armazenado.
+		@return retorna o nome relativo ao atributo desta classe.
+	*/
 	public String getNome()
 	{
 		return this.nome;
 	}
 
+	/**
+		Retorna o nome do ultimo jogador armazenado.
+		@return retorna o nome relativo ao atributo desta classe.
+	*/
 	public String getUltimoJogador()
 	{
 		return this.ultimoJogador;
 	}
 
-    public void adeus () throws Exception
+	/**
+		Finaliza a conexao Servidor - Cliente.
+		Fecha o transmissor, o receptor e a conexao.
+		@throws Exception caso ocorra um erro de desconexao.
+	*/
+    public void adeus() throws Exception
     {
         try
         {

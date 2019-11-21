@@ -9,8 +9,7 @@ public class AceitadoraDeConexao extends Thread
     private ServerSocket        pedido;
     private ArrayList<Parceiro> jogadores;
 
-    public AceitadoraDeConexao(String escolha, ArrayList<Parceiro> jogadores)
-    throws Exception
+    public AceitadoraDeConexao(String escolha, ArrayList<Parceiro> jogadores) throws Exception
     {
         int porta = AceitadoraDeConexao.PORTA_PADRAO;
 

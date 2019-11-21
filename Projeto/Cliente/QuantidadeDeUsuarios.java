@@ -1,30 +1,32 @@
 /**
-	A classe QuantidadeDeUsuarios a quantidade de usuarios,
+	A classe QuantidadeDeUsuarios armazena a quantidade de usuarios no servidor,
 	tendo como base um int que respresenta a quantidade de usuarios.
-	Instâncias desta classe permitem armazenar determinado numero de usuarios.
-	@author Eduardo Migueis, Enzo Spinella, Gabriel Scalese e Nícolas Duarte
-	@since 2019
+	Instancias desta classe permitem armazenar determinado numero de usuarios.
+	@author Eduardo Migueis, Enzo Spinella, Gabriel Scalese e Nicolas Duarte.
+	@since 2019.
 */
 public class QuantidadeDeUsuarios extends Comunicado implements Cloneable, Comparable<QuantidadeDeUsuarios>
 {
 	private int qtd = 0;
-/**
-	Constroi uma instância da classe QuantidadeDeUsuarios.
-	@param nome determina a quantidade de usuarios a ser armazenado na classe.
-*/
+
+	/**
+		Constroi uma instancia da classe QuantidadeDeUsuarios.
+		@param qtd determina a quantidade de usuarios a ser armazenado na classe.
+	*/
 	public QuantidadeDeUsuarios(int qtd)
 	{
 		this.qtd = qtd;
 	}
-/**
-	    Constroi uma cópia da instância da classe QuantidadeDeUsuarios.
+
+	/**
+	    Constroi uma copia da instancia da classe QuantidadeDeUsuarios.
 	    Para tanto, deve ser fornecida uma instancia da classe
 	    QuantidadeDeUsuarios para ser utilizada como modelo para a
-	    construção da nova instância.
-	    @param qUsuarios a instância da classe QuantidadeDeUsuarios a ser usada
+	    construcao da nova instancia.
+	    @param qUsuarios a instancia da classe QuantidadeDeUsuarios a ser usada
             como modelo.
 	    @throws Exception se o modelo for null.
-*/
+	*/
 	public QuantidadeDeUsuarios(QuantidadeDeUsuarios qUsuarios) throws Exception
 	{
 		if(qUsuarios == null)
@@ -32,21 +34,22 @@ public class QuantidadeDeUsuarios extends Comunicado implements Cloneable, Compa
 
 		this.qtd = qUsuarios.qtd;
 	}
-/**
-	Retorna a quantidade de usuarios armazenada.
-	@return retorna a quantidade associada ao atributo desta classe.
-*/
+
+	/**
+		Retorna a quantidade de usuarios armazenada.
+		@return retorna a quantidade associada ao atributo desta classe.
+	*/
 	public int getQtd()
 	{
 		return this.qtd;
 	}
 
-/**
-	 Calcula o código de espalhamento (ou código de hash) de uma QuantidadeDeUsuarios.
-	 Calcula e resulta o código de espalhamento (ou código de hash, ou ainda o
-	 hashcode) da QuantidadeDeUsuarios representada pela instância à qual o método for aplicado.
-	 @return o código de espalhamento da QuantidadeDeUsuarios chamante do método.
-*/
+	/**
+		 Calcula o codigo de espalhamento (ou codigo de hash) de uma QuantidadeDeUsuarios.
+		 Calcula e resulta o codigo de espalhamento (ou codigo de hash, ou ainda o
+		 hashcode) da QuantidadeDeUsuarios representada pela instancia a qual o metodo for aplicado.
+		 @return o codigo de espalhamento da QuantidadeDeUsuarios chamante do metodo.
+	*/
 	public int hashCode()
 	{
 		int ret = 17;
@@ -58,13 +61,14 @@ public class QuantidadeDeUsuarios extends Comunicado implements Cloneable, Compa
 
 		return ret;
 	}
-/**
+
+	/**
 	    Clona uma QuantidadeDeUsuarios.
-	    Produz e resulta uma cópia da QuantidadeDeUsuarios representado pela instância
-	    à qual o método for aplicado.
-	    @return a cópia da QuantidadeDeUsuarios representada pela instância à qual
-	    o método for aplicado.
-	 */
+	    Produz e resulta uma copia da QuantidadeDeUsuarios representado pela instancia
+	    a qual o metodo for aplicado.
+	    @return a copia da QuantidadeDeUsuarios representada pela instancia a qual
+	    o metodo for aplicado.
+	*/
 	public Object clone()
 	{
 		QuantidadeDeUsuarios ret = null;
@@ -78,17 +82,18 @@ public class QuantidadeDeUsuarios extends Comunicado implements Cloneable, Compa
 
 		return ret;
 	}
-/**
+
+	/**
 	    Verifica a igualdade entre duas QuantidadeDeUsuarios.
-	    Verifica se o Object fornecido como parâmetro representa uma
-	    QuantidadeDeUsuarios igual àquela representada pela instância à qual este
-	    método for aplicado, resultando true em caso afirmativo,
-	    ou false, caso contrário.
-	    @param  obj o objeto a ser comparado com a instância à qual esse método
+	    Verifica se o Object fornecido como parametro representa uma
+	    QuantidadeDeUsuarios igual aquela representada pela instancia a qual este
+	    metodo for aplicado, resultando true em caso afirmativo,
+	    ou false, caso contrario.
+	    @param  obj o objeto a ser comparado com a instancia a qual esse metodo
 	            for aplicado.
-	    @return true, caso o Object fornecido ao método e a instância chamante do
-	            método representarem agendas iguais, ou false, caso contrário.
-	    */
+	    @return true, caso o Object fornecido ao metodo e a instancia chamante do
+	            metodo representarem QuantidadeDeUsuarios iguais, ou false, caso contrario.
+	*/
 	public boolean equals(Object obj)
 	{
 		if(obj == null)
@@ -107,6 +112,14 @@ public class QuantidadeDeUsuarios extends Comunicado implements Cloneable, Compa
 		return true;
 	}
 
+	/**
+		Compara duas QuantidadeDeUsuarios.
+		Verifica se o parametro representa uma QuantidadeDeUsuarios igual, maior ou menor aquela representada pela instancia a qual este
+		metodo for aplicado, resultando um numero positivo(maior), negativo(menor) ou 0(igual).
+		@param  qtdU o parametro a ser comparado com a instancia a qual esse metodo
+				for aplicado.
+		@return 17, caso o qtdU fornecido ao metodo seja menor que this, ou -17, caso contrario, ou entao 0, se os dois forem iguais.
+	*/
 	public int compareTo(QuantidadeDeUsuarios qtdU)
 	{
 		if(this.qtd > qtdU.qtd)
@@ -117,11 +130,12 @@ public class QuantidadeDeUsuarios extends Comunicado implements Cloneable, Compa
 
 		return 0;
 	}
-/**
-	    Gera uma representação textual da quantidade.
+
+	/**
+	    Gera uma representacao textual da quantidade.
 	    Produz e resulta um String com a quantidade.
-	    @return um String contendo o conteúdo da quantidade.
-	    */
+	    @return um String contendo o conteudo da quantidade.
+	*/
 	public String toString()
 	{
 		return "Quantidade: " + this.qtd;
